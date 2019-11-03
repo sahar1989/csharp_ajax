@@ -6,13 +6,13 @@ This application writes by Visual studio 2013
 
 Default page: index.html 
 
-Api folder: rest api get all games, get games details by id and update games goals,set and winner
+Api: API to get all games, get games details by id and update games goals,set and winner
 
-App_Data: foosball database (sql server) includes 3 tables games,teams and team_games and store procedures in order to manipulate data
+App_Data: foosball database (sql server) includes 3 tables games,teams, teams_games and store procedures in order to manipulate data
 
-Scripts folder:  get data from Api by ajax (jquery)
+Scripts: get data from Api by ajax (jquery)
 
-App_Code folder: game and database classes
+App_Code: game and database classes
 
 ***********************
 in index page you could see list of games in a table, by clicking on view details button 
