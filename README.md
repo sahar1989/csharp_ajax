@@ -10,7 +10,7 @@ Api folder: rest api get all games, get games details by id and update games goa
 
 App_Data: foosball database (sql server) includes 3 tables games,teams and team_games and store procedures in order to manipulate data
 
-Scripts folder: ajax 
+Scripts folder:  get data from Api by ajax (jquery)
 
 App_Code folder: game and database classes
 
