@@ -1,0 +1,13 @@
+﻿body {
+    font-size:12px;
+}
+#div_report{
+    
+    margin:7% auto;
+    width:80%;
+}
+#div_details{
+    margin:7% auto;
+    width:80%;
+    display:none;
+}

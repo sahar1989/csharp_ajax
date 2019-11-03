@@ -1,4 +1,4 @@
-﻿<%@ WebHandler Language="C#" Class="report" %>
+﻿<%@ WebHandler Language="C#" Class="public_api" %>
 
 using System;
 using System.Web;
@@ -8,8 +8,8 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 
-public class report : IHttpHandler {
-    
+public class public_api : IHttpHandler
+{  
     FoosBallDB db = new FoosBallDB();
     
     public void ProcessRequest (HttpContext context) {
@@ -20,9 +20,15 @@ public class report : IHttpHandler {
             get_all_games(context);
         }else if (i == "2") {
             get_game_details(context);
-        }else{
-            context.Response.ContentType = "text/plain";
-            context.Response.Write("Hello World");
+        }
+        else if (i == "3"){
+            update_set_goal(context);
+        }
+        else
+        {
+            /*//context.Response.ContentType = "text/plain";
+            context.Response.Write("Hello World");*/
+           
         }
     }
 
@@ -44,7 +50,16 @@ public class report : IHttpHandler {
         context.Response.Write(json);
         context.Response.End();
     }
-    
+
+    private void update_set_goal(HttpContext context)
+    {
+        int game_id = Convert.ToInt32(context.Request.Form["game_id"]);
+        int team_id = Convert.ToInt32(context.Request.Form["team_id"]);
+        JavaScriptSerializer serializer = new JavaScriptSerializer();
+        string json = serializer.Serialize((object)db.update_set_goal(team_id,game_id));
+        context.Response.Write(json);
+        context.Response.End();
+    }
     public bool IsReusable {
         get {
             return false;
