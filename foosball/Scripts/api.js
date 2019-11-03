@@ -129,9 +129,15 @@ function update_set_goal(game_id,team_id) {
         success: function (data) {
             $("#div_message").css('display', 'block');
             $("#div_message").html(data);
-            $("#div_details").css('display', 'none');
-            get_all_games();
-            get_game_details(game_id);
+            refresh_data(game_id);
         }
     });
+}
+//get latest data from db
+function refresh_data(game_id) {
+    //it recommends to add some fade effect by jquery 
+    $("#div_message").css('display', 'none');
+    //$("#div_details").css('display', 'none');
+    get_all_games();
+    get_game_details(game_id);
 }
