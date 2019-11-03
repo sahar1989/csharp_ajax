@@ -1,4 +1,4 @@
-# foosball game by c# 
+# foosball game writes in c# 
 
 Description
 
